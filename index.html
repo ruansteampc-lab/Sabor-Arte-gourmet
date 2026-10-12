@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor&Arte Gourmet — Gastronomia Autoral & Experiência Artística</title>
+  <meta name="description" content="Sabor&Arte Gourmet em Itapecerica da Serra. Sabores artesanais, ambiente acolhedor com cabines intimistas, mezanino cultural e atendimento caloroso.">
+
+  <!-- Tipografia Editorial: Playfair Display + Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brick-white: #F5F2ED;
+      --color-wood: #75432D;
+      --color-deep-brown: #35241C;
+      --color-sand: #E8D9C4;
+      --color-soft-black: #171717;
+      --color-border: rgba(53, 36, 28, 0.12);
+      --color-border-light: rgba(245, 242, 237, 0.16);
+      --color-sand-tint: rgba(232, 217, 196, 0.35);
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      --cubic-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      --container-max: 1320px;
+      --container-pad: clamp(1.25rem, 5vw, 4rem);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-brick-white);
+      color: var(--color-soft-black);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--color-brick-white);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Textura sutil inspirada na parede de tijolos brancos da fachada */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      background-image: radial-gradient(var(--color-deep-brown) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    button {
+      background: none;
+      border: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--container-pad);
+      padding-right: var(--container-pad);
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-wood);
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-sand {
+      color: var(--color-sand);
+    }
+
+    .heading-editorial {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1.6rem 0;
+      transition: background-color 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(245, 242, 237, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-wood);
+      font-style: italic;
+    }
+
+    .brand-title span {
+      font-style: normal;
+      font-weight: 400;
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      color: var(--color-deep-brown);
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.58rem;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-wood);
+      margin-top: 0.25rem;
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav-desktop a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-deep-brown);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1.5px;
+      background-color: var(--color-wood);
+      transition: width 0.3s ease;
+    }
+
+    .nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    .btn-header-cta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.6rem;
+      border: 1px solid var(--color-wood);
+      color: var(--color-wood);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-header-cta:hover {
+      background-color: var(--color-wood);
+      color: var(--color-brick-white);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 28px;
+      padding: 4px 0;
+      z-index: 101;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-deep-brown);
+      transition: var(--transition-smooth);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--color-brick-white);
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem var(--container-pad);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mobile-drawer a {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--color-deep-brown);
+    }
+
+    .mobile-drawer-contact {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      color: var(--color-wood);
+    }
+
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 7.5rem;
+      padding-bottom: 5rem;
+      background-color: var(--color-brick-white);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+      line-height: 1.08;
+      color: var(--color-deep-brown);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--color-wood);
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+      line-height: 1.7;
+      color: #4a3830;
+      max-width: 530px;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-editorial-primary {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.15rem 2.4rem;
+      background-color: var(--color-wood);
+      color: var(--color-brick-white);
+      border: 1px solid var(--color-wood);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-editorial-primary:hover {
+      background-color: var(--color-deep-brown);
+      border-color: var(--color-deep-brown);
+      color: var(--color-sand);
+    }
+
+    .btn-editorial-secondary {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.15rem 2.2rem;
+      color: var(--color-deep-brown);
+      border: 1px solid var(--color-deep-brown);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-editorial-secondary:hover {
+      background-color: var(--color-deep-brown);
+      color: var(--color-brick-white);
+    }
+
+    /* Composição da Fachada Vetorial Real no Hero */
+    .facade-art-frame {
+      position: relative;
+      background: #EDE6DC;
+      border: 1px solid var(--color-border);
+      padding: 2.5rem;
+      overflow: hidden;
+    }
+
+    .facade-brick-wall {
+      position: relative;
+      background-color: #F8F6F2;
+      border: 1px solid #E2DACF;
+      padding: 3rem 2rem;
+      text-align: center;
+      background-image: 
+        repeating-linear-gradient(0deg, rgba(117, 67, 45, 0.05) 0, rgba(117, 67, 45, 0.05) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(117, 67, 45, 0.05) 0, rgba(117, 67, 45, 0.05) 1px, transparent 1px, transparent 58px);
+      box-shadow: inset 0 0 40px rgba(117, 67, 45, 0.04);
+    }
+
+    .facade-unit-tag {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #9C3325;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(156, 51, 37, 0.25);
+      padding-bottom: 2px;
+    }
+
+    .facade-wood-sign {
+      margin-bottom: 2rem;
+    }
+
+    .facade-wood-sign h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+      font-style: italic;
+      color: var(--color-wood);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-shadow: 2px 2px 0px rgba(53, 36, 28, 0.18);
+    }
+
+    .facade-wood-sign span {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-deep-brown);
+      display: block;
+      margin-top: 0.6rem;
+    }
+
+    .facade-entrance-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(117, 67, 45, 0.15);
+      font-size: 0.82rem;
+      color: #5d4b42;
+    }
+
+    .facade-entrance-preview span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-stamp-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background-color: var(--color-deep-brown);
+      color: var(--color-sand);
+      padding: 1rem 1.4rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .essence-section {
+      padding: clamp(5rem, 8vw, 8.5rem) 0;
+      background-color: var(--color-brick-white);
+      position: relative;
+    }
+
+    .essence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+      align-items: center;
+    }
+
+    .essence-heading {
+      font-size: clamp(2.3rem, 3.8vw, 3.5rem);
+      color: var(--color-deep-brown);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .essence-heading em {
+      font-style: italic;
+      color: var(--color-wood);
+    }
+
+    .essence-lead {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #4a3a32;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .essence-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .essence-highlight-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.5rem;
+      align-items: baseline;
+    }
+
+    .essence-highlight-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--color-wood);
+    }
+
+    .essence-highlight-desc {
+      font-size: 0.92rem;
+      color: #55443c;
+    }
+
+    /* Quadro de arte editorial com textura de cabine e afeto */
+    .essence-editorial-canvas {
+      background: linear-gradient(135deg, #FAF7F2 0%, #EDE5D8 100%);
+      border: 1px solid var(--color-border);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      position: relative;
+    }
+
+    .essence-booth-sketch {
+      border: 1px dashed var(--color-wood);
+      padding: 2.5rem 2rem;
+      background-color: #FFFFFF;
+      position: relative;
+    }
+
+    .booth-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--color-deep-brown);
+      margin-bottom: 1.5rem;
+    }
+
+    .booth-quote-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-wood);
+      display: block;
+    }
+
+    .booth-features-list {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+      color: #5f4e45;
+    }
+
+    .booth-features-list li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .booth-features-list li::before {
+      content: "—";
+      color: var(--color-wood);
+      font-weight: bold;
+    }
+
+    .signatures-section {
+      padding: clamp(5.5rem, 8.5vw, 9.5rem) 0;
+      background-color: #EDE8E0;
+      position: relative;
+    }
+
+    .signatures-header {
+      margin-bottom: 4rem;
+      max-width: 760px;
+    }
+
+    .signatures-title {
+      font-size: clamp(2.3rem, 3.8vw, 3.6rem);
+      color: var(--color-deep-brown);
+      margin-top: 0.4rem;
+    }
+
+    .signatures-subtitle {
+      font-size: 1.05rem;
+      color: #634f45;
+      margin-top: 1rem;
+      font-weight: 300;
+    }
+
+    .signatures-spread {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .signature-plate-editorial {
+      display: grid;
+      grid-template-columns: 100px 1.4fr 1fr;
+      gap: 3.5rem;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+      align-items: baseline;
+    }
+
+    .signature-numeral {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      line-height: 1;
+      font-weight: 400;
+      color: rgba(117, 67, 45, 0.45);
+      font-style: italic;
+    }
+
+    .signature-main-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signature-dish-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 2.9vw, 2.7rem);
+      color: var(--color-deep-brown);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+
+    .signature-dish-desc {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: #503f36;
+      font-weight: 300;
+    }
+
+    .signature-culinary-notes {
+      background-color: var(--color-brick-white);
+      border-left: 2px solid var(--color-wood);
+      padding: 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .notes-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-wood);
+    }
+
+    .notes-content {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--color-deep-brown);
+      line-height: 1.4;
+    }
+
+    .notes-tags {
+      font-size: 0.78rem;
+      color: #7d695e;
+      margin-top: 0.4rem;
+    }
+
+    .menu-section {
+      padding: clamp(5.5rem, 8.5vw, 9.5rem) 0;
+      background-color: var(--color-brick-white);
+      position: relative;
+    }
+
+    .menu-header-center {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .menu-title {
+      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+      color: var(--color-deep-brown);
+      margin-bottom: 1rem;
+    }
+
+    .menu-disclaimer-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-style: italic;
+      color: var(--color-wood);
+      letter-spacing: 0.04em;
+      margin-top: 0.9rem;
+      padding: 0.45rem 1.4rem;
+      background-color: var(--color-sand-tint);
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    .menu-tab-btn {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #8c7870;
+      padding: 0.5rem 1.4rem;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .menu-tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-wood);
+      transition: width 0.3s ease;
+    }
+
+    .menu-tab-btn:hover {
+      color: var(--color-deep-brown);
+    }
+
+    .menu-tab-btn.active {
+      color: var(--color-deep-brown);
+      font-weight: 600;
+    }
+
+    .menu-tab-btn.active::after {
+      width: 100%;
+    }
+
+    .menu-editorial-paper {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #FAF7F2;
+      border: 1px solid var(--color-border);
+      padding: clamp(2rem, 5vw, 4.5rem);
+      box-shadow: 0 4px 28px rgba(53, 36, 28, 0.03);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu-editorial-paper.fade-out {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .menu-editorial-paper.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .menu-grid-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4.5rem;
+      row-gap: 2.8rem;
+    }
+
+    .menu-item-row {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed rgba(117, 67, 45, 0.2);
+    }
+
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 100%;
+      margin-bottom: 0.35rem;
+    }
+
+    .menu-item-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-deep-brown);
+      letter-spacing: -0.01em;
+      flex-shrink: 0;
+    }
+
+    .menu-item-leader {
+      flex-grow: 1;
+      margin: 0 0.85rem;
+      border-bottom: 1px dotted rgba(117, 67, 45, 0.45);
+      position: relative;
+      top: -4px;
+    }
+
+    .menu-item-price {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-wood);
+      white-space: nowrap;
+    }
+
+    .menu-item-desc {
+      font-size: 0.88rem;
+      color: #615047;
+      line-height: 1.6;
+      font-weight: 300;
+      max-width: 95%;
+    }
+
+    .menu-editorial-footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.88rem;
+      color: #7a6860;
+    }
+
+    .ambient-section {
+      padding: clamp(5.5rem, 8.5vw, 9.5rem) 0;
+      background-color: var(--color-deep-brown);
+      color: var(--color-brick-white);
+      position: relative;
+    }
+
+    .ambient-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      margin-bottom: 4.5rem;
+      align-items: flex-end;
+    }
+
+    .ambient-title {
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+      line-height: 1.15;
+      color: var(--color-brick-white);
+    }
+
+    .ambient-title em {
+      font-style: italic;
+      color: var(--color-sand);
+    }
+
+    .ambient-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #D3C7BC;
+      font-weight: 300;
+    }
+
+    .ambient-mosaic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .venue-art-card {
+      background-color: #241712;
+      border: 1px solid rgba(232, 217, 196, 0.15);
+      padding: 2.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 340px;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+
+    .venue-art-card:hover {
+      border-color: rgba(232, 217, 196, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .venue-card-badge {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-sand);
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+
+    .venue-card-title {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--color-brick-white);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .venue-card-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #CFC2B6;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .venue-card-detail-bar {
+      border-top: 1px solid rgba(232, 217, 196, 0.12);
+      padding-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #A39385;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ambient-attributes-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .ambient-attr-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-sand);
+      margin-bottom: 0.5rem;
+    }
+
+    .ambient-attr-item p {
+      font-size: 0.86rem;
+      color: #B5A597;
+      line-height: 1.6;
+    }
+
+    .reviews-section {
+      padding: clamp(5.5rem, 8.5vw, 9.5rem) 0;
+      background-color: var(--color-brick-white);
+    }
+
+    .reviews-header-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .reviews-score-hero {
+      display: flex;
+      align-items: baseline;
+      gap: 1.4rem;
+    }
+
+    .score-number {
+      font-family: var(--font-display);
+      font-size: clamp(3.8rem, 6vw, 5.6rem);
+      line-height: 1;
+      color: var(--color-deep-brown);
+      font-weight: 700;
+    }
+
+    .score-details-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .score-stars {
+      color: var(--color-wood);
+      font-size: 1.3rem;
+      letter-spacing: 0.18em;
+    }
+
+    .score-total-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6b574e;
+      margin-top: 0.35rem;
+      font-weight: 600;
+    }
+
+    .btn-google-reviews {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.95rem 1.85rem;
+      border: 1px solid var(--color-deep-brown);
+      color: var(--color-deep-brown);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-google-reviews:hover {
+      background-color: var(--color-deep-brown);
+      color: var(--color-brick-white);
+    }
+
+    .reviews-editorial-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+    }
+
+    .review-editorial-item {
+      position: relative;
+    }
+
+    .review-mark-sign {
+      font-family: var(--font-display);
+      font-size: 4.5rem;
+      line-height: 1;
+      color: var(--color-sand);
+      margin-bottom: -1.3rem;
+      display: block;
+    }
+
+    .review-quote-body {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+      line-height: 1.55;
+      color: var(--color-deep-brown);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .review-author-meta {
+      font-size: 0.74rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-wood);
+      font-weight: 600;
+    }
+
+    .location-section {
+      padding: clamp(5.5rem, 8.5vw, 9.5rem) 0;
+      background-color: #EDE8E0;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .location-info-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .location-title {
+      font-size: clamp(2.3rem, 3.8vw, 3.6rem);
+      color: var(--color-deep-brown);
+      margin-bottom: 1.5rem;
+    }
+
+    .location-address-lead {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: #3f2d24;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .info-data-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .info-data-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 0.75rem;
+    }
+
+    .info-data-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-wood);
+    }
+
+    .info-data-val {
+      color: var(--color-deep-brown);
+      font-weight: 500;
+    }
+
+    .services-tagline {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .service-badge {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      background-color: var(--color-brick-white);
+      color: var(--color-deep-brown);
+      border: 1px solid var(--color-border);
+    }
+
+    .location-cta-actions {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-whatsapp-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: var(--color-wood);
+      color: var(--color-brick-white);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.15rem 2.1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-whatsapp-direct:hover {
+      background-color: var(--color-deep-brown);
+      color: var(--color-sand);
+    }
+
+    .btn-maps-direct {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid var(--color-deep-brown);
+      color: var(--color-deep-brown);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.15rem 2.1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-maps-direct:hover {
+      background-color: var(--color-deep-brown);
+      color: var(--color-brick-white);
+    }
+
+    .map-frame-wrapper {
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      filter: contrast(95%) saturate(90%);
+      transition: filter 0.4s ease;
+    }
+
+    .map-frame-wrapper:hover {
+      filter: contrast(100%) saturate(100%);
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .site-footer {
+      background-color: var(--color-deep-brown);
+      color: var(--color-brick-white);
+      padding: 5.5rem 0 3rem 0;
+      border-top: 1px solid rgba(232, 217, 196, 0.15);
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--color-brick-white);
+      font-weight: 700;
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand-slogan {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--color-sand);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-brand-summary {
+      font-size: 0.88rem;
+      color: #A99B90;
+      max-width: 380px;
+      line-height: 1.7;
+    }
+
+    .footer-nav-col h5, .footer-contact-col h5 {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-sand);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .footer-links-list a {
+      font-size: 0.88rem;
+      color: #D3C7BC;
+    }
+
+    .footer-links-list a:hover {
+      color: var(--color-sand);
+      padding-left: 4px;
+    }
+
+    .footer-contact-details p {
+      font-size: 0.88rem;
+      color: #D3C7BC;
+      line-height: 1.7;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-bottom-bar {
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(232, 217, 196, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: #8C7C72;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Scroll reveal transitions */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s var(--cubic-editorial), transform 0.65s var(--cubic-editorial);
+    }
+
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .essence-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .signature-plate-editorial {
+        grid-template-columns: 80px 1fr;
+        gap: 2.5rem;
+      }
+
+      .signature-culinary-notes {
+        grid-column: span 2;
+      }
+
+      .ambient-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .ambient-mosaic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ambient-attributes-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .reviews-editorial-list {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-desktop, .btn-header-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .signature-plate-editorial {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .signature-culinary-notes {
+        grid-column: span 1;
+      }
+
+      .menu-grid-items {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .essence-highlight-row {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+
+      .info-data-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+
+      .ambient-attributes-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-mark" aria-label="Sabor&Arte Gourmet - Página Inicial">
+        <span class="brand-title">Sabor<span>&</span>Arte</span>
+        <span class="brand-subtitle">Gourmet</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegação do Restaurante">
+        <a href="#essencia">Essência</a>
+        <a href="#assinaturas">Assinaturas</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#ambiente">O Espaço</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#localizacao">Localização</a>
+      </nav>
+
+      <a href="https://wa.me/5511957076511?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Sabor%26Arte%20Gourmet" target="_blank" rel="noopener noreferrer" class="btn-header-cta">
+        Fazer Reserva
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Gaveta Mobile -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <nav>
+      <a href="#essencia" class="mobile-nav-link">Essência</a>
+      <a href="#assinaturas" class="mobile-nav-link">Assinaturas</a>
+      <a href="#cardapio" class="mobile-nav-link">Cardápio</a>
+      <a href="#ambiente" class="mobile-nav-link">O Espaço</a>
+      <a href="#avaliacoes" class="mobile-nav-link">Avaliações</a>
+      <a href="#localizacao" class="mobile-nav-link">Localização</a>
+    </nav>
+    <div class="mobile-drawer-contact">
+      <p>Av. Quinze de Novembro, Itapecerica da Serra - SP</p>
+      <p style="margin-top: 0.5rem; font-weight: 700; color: var(--color-deep-brown);">(11) 95707-6511</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal-on-scroll">
+          <span class="eyebrow">SABOR&ARTE — GOURMET</span>
+          <h1 class="heading-editorial hero-title">
+            A arte de transformar <em>sabores</em> em experiências.
+          </h1>
+          <p class="hero-subtitle">
+            "Gastronomia feita com cuidado, personalidade e ingredientes que despertam os sentidos."
+          </p>
+          <div class="hero-actions">
+            <a href="#cardapio" class="btn-editorial-primary">Conheça nosso cardápio</a>
+            <a href="#ambiente" class="btn-editorial-secondary">Visite nosso espaço</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-on-scroll">
+          <div class="facade-art-frame">
+            <div class="facade-brick-wall">
+              <span class="facade-unit-tag">LOJA 4002</span>
+              
+              <div class="facade-wood-sign">
+                <h2>Sabor e Arte</h2>
+                <span>GOURMET</span>
+              </div>
+
+              <div class="facade-entrance-preview">
+                <span>✦ Climatizado</span>
+                <span>✦ Cabines Intimistas</span>
+                <span>✦ Buffet Fresco</span>
+              </div>
+            </div>
+            
+            <div class="hero-stamp-badge">
+              Itapecerica da Serra
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="essence-section" id="essencia">
+      <div class="container essence-grid">
+        <div class="essence-text reveal-on-scroll">
+          <span class="eyebrow">Identidade Artesanal</span>
+          <h2 class="heading-editorial essence-heading">
+            Sabores que encantam.<br>Um ambiente que <em>acolhe</em>.
+          </h2>
+          <p class="essence-lead">
+            "No Sabor&Arte Gourmet, cada detalhe faz parte da experiência. Da escolha dos ingredientes ao cuidado no atendimento, tudo é pensado para proporcionar momentos especiais."
+          </p>
+
+          <div class="essence-highlights">
+            <div class="essence-highlight-row">
+              <span class="essence-highlight-title">Gastronomia artesanal</span>
+              <span class="essence-highlight-desc">Preparações executadas com tempo, equilíbrio e o tempero aconchegante da cozinha contemporânea.</span>
+            </div>
+            <div class="essence-highlight-row">
+              <span class="essence-highlight-title">Ambiente aconchegante</span>
+              <span class="essence-highlight-desc">Cabines estofadas em couro marrom para você e seus convidados desfrutarem momentos memoráveis.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="essence-visual reveal-on-scroll">
+          <div class="essence-editorial-canvas">
+            <div class="essence-booth-sketch">
+              <p class="booth-quote">
+                "Cozinhar com arte é acolher com generosidade e transformar uma refeição em celebração."
+              </p>
+              <span class="booth-quote-author">Sabor&Arte — Filosofia da Casa</span>
+
+              <ul class="booth-features-list">
+                <li>Cabines em capitonê acolhedoras</li>
+                <li>Pinturas murais e telas artísticas originais</li>
+                <li>Buffet de saladas e antepastos frescos</li>
+                <li>Atendimento cordial e atencioso</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signatures-section" id="assinaturas">
+      <div class="container">
+        <div class="signatures-header reveal-on-scroll">
+          <span class="eyebrow">Mencionados com Elogio</span>
+          <h2 class="heading-editorial signatures-title">Assinaturas Gastronômicas</h2>
+          <p class="signatures-subtitle">
+            Criações autorais da casa que ganharam destaque no carinho de nossos frequentadores e clientes.
+          </p>
+        </div>
+
+        <div class="signatures-spread reveal-on-scroll">
+          <!-- Assinatura I: Penne à la Vodka -->
+          <article class="signature-plate-editorial">
+            <span class="signature-numeral">I</span>
+            <div class="signature-main-info">
+              <h3 class="signature-dish-title">Penne à la Vodka</h3>
+              <p class="signature-dish-desc">
+                Massa penne grano duro perfeitamente envolvida em emulsão aveludada, redução de tomates selecionados, notas sutis de vodka e ervas frescas da horta.
+              </p>
+            </div>
+            <div class="signature-culinary-notes">
+              <span class="notes-label">Perfil Gastronômico</span>
+              <p class="notes-content">Cremoso, elegante & aveludado</p>
+              <span class="notes-tags">Penne Grano Duro · Emulsão de Vodka · Manjericão</span>
+            </div>
+          </article>
+
+          <!-- Assinatura II: Tilápia à Parmegiana -->
+          <article class="signature-plate-editorial">
+            <span class="signature-numeral">II</span>
+            <div class="signature-main-info">
+              <h3 class="signature-dish-title">Tilápia à Parmegiana</h3>
+              <p class="signature-dish-desc">
+                Filé nobre de tilápia fresca empanado com casquinha dourada crocante, coberto com molho artesanal de tomates rústicos e generosa camada de queijo gratinado ao forno.
+              </p>
+            </div>
+            <div class="signature-culinary-notes">
+              <span class="notes-label">Perfil Gastronômico</span>
+              <p class="notes-content">Crocância dourada & queijo gratinado</p>
+              <span class="notes-tags">Filé Fresco · Molho da Casa · Queijo Gratinado</span>
+            </div>
+          </article>
+
+          <!-- Assinatura III: Molho Barbecue de Goiabada -->
+          <article class="signature-plate-editorial">
+            <span class="signature-numeral">III</span>
+            <div class="signature-main-info">
+              <h3 class="signature-dish-title">Molho Barbecue de Goiabada</h3>
+              <p class="signature-dish-desc">
+                A identidade brasileira traduzida em um glacê agridoce irresistível, combinando o calor do defumado clássico com a doçura e riqueza da goiabada artesanal sobre preparações especiais.
+              </p>
+            </div>
+            <div class="signature-culinary-notes">
+              <span class="notes-label">Perfil Gastronômico</span>
+              <p class="notes-content">Equilíbrio agridoce, aromático & defumado</p>
+              <span class="notes-tags">Goiabada Artesanal · Fumaça Líquida · Redução Especial</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="container">
+        <div class="menu-header-center reveal-on-scroll">
+          <span class="eyebrow">Cardápio Demonstrativo</span>
+          <h2 class="heading-editorial menu-title">Seleção da Cozinha</h2>
+          <p style="color: #615047; font-weight: 300;">
+            Inspiração clássica de menu gourmet, refinado e com generoso espaço de leitura.
+          </p>
+          <div class="menu-disclaimer-badge">
+            Cardápio ilustrativo — pratos, descrições e valores sujeitos à atualização.
+          </div>
+        </div>
+
+        <!-- Abas de Categorias -->
+        <nav class="menu-tabs reveal-on-scroll" aria-label="Categorias do cardápio">
+          <button class="menu-tab-btn" data-category="entradas">Entradas</button>
+          <button class="menu-tab-btn active" data-category="principais">Pratos Principais</button>
+          <button class="menu-tab-btn" data-category="sobremesas">Sobremesas</button>
+          <button class="menu-tab-btn" data-category="bebidas">Bebidas</button>
+        </nav>
+
+        <!-- Folha Editorial do Menu com Linhas Pontilhadas -->
+        <div class="menu-editorial-paper" id="menuPaper">
+          <div class="menu-grid-items" id="menuItemsList">
+            <!-- Populado dinamicamente via JavaScript sem cards artificiais -->
+          </div>
+        </div>
+
+        <div class="menu-editorial-footer reveal-on-scroll">
+          <p>Consulte nossa equipe sobre pratos do dia, opções de guarnições e sugestões de harmonização.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ambient-section" id="ambiente">
+      <div class="container">
+        <div class="ambient-intro reveal-on-scroll">
+          <div>
+            <span class="eyebrow eyebrow-sand">Ambiente & Arte</span>
+            <h2 class="heading-editorial ambient-title">
+              O espaço onde a arte e a <em>confraternização</em> se encontram.
+            </h2>
+          </div>
+          <div>
+            <p class="ambient-description">
+              Inspirado pela fachada acolhedora em tijolos brancos e letreiro em madeira maciça, o Sabor&Arte Gourmet foi projetado para oferecer bem-estar em cada detalhe: das cabines estofadas ao mezanino com murais da sétima arte.
+            </p>
+          </div>
+        </div>
+
+        <div class="ambient-mosaic-grid reveal-on-scroll">
+          <!-- Espaço 1: A Fachada com Tijolos Brancos e Letreiro de Madeira -->
+          <div class="venue-art-card">
+            <div>
+              <span class="venue-card-badge">Identidade Visual & Entrada</span>
+              <h3 class="venue-card-title">A Fachada em Tijolos Brancos</h3>
+              <p class="venue-card-text">
+                Portas envidraçadas e letreiro curvo entalhado em madeira nobre sobre parede de tijolinhos brancos, com pintura artística da árvore frondosa e obras na recepção.
+              </p>
+            </div>
+            <div class="venue-card-detail-bar">
+              <span>Letreiro em Madeira</span>
+              <span>Recepção Acolhedora</span>
+            </div>
+          </div>
+
+          <!-- Espaço 2: O Salão com Cabines em Vinho/Marrom e Telas de Arte -->
+          <div class="venue-art-card">
+            <div>
+              <span class="venue-card-badge">Conforto Climatizado</span>
+              <h3 class="venue-card-title">Cabines Acolhedoras & Galeria</h3>
+              <p class="venue-card-text">
+                Salão com piso xadrez clássico, climatização constante e confortáveis cabines estofadas em couro cor vinho. Paredes decoradas com quadros expressivos e arte contemporânea.
+              </p>
+            </div>
+            <div class="venue-card-detail-bar">
+              <span>Cabines Capitonê</span>
+              <span>Ambiente Climatizado</span>
+            </div>
+          </div>
+
+          <!-- Espaço 3: Buffet de Saladas Frescas e Legumes Artísticos -->
+          <div class="venue-art-card">
+            <div>
+              <span class="venue-card-badge">Frescor Diário</span>
+              <h3 class="venue-card-title">Buffet Artesanal de Saladas</h3>
+              <p class="venue-card-text">
+                Bancada iluminada com seleção viva de antepastos, legumes ornamentados artesanalmente, folhas selecionadas e molhos especiais preparados todos os dias.
+              </p>
+            </div>
+            <div class="venue-card-detail-bar">
+              <span>Ingredientes Selecionados</span>
+              <span>Cores & Frescor</span>
+            </div>
+          </div>
+
+          <!-- Espaço 4: Mezanino com Gramado, Tambores e Painel de Cinema -->
+          <div class="venue-art-card">
+            <div>
+              <span class="venue-card-badge">Cultura & Convivência</span>
+              <h3 class="venue-card-title">Deck Cultural & Painel de Cinema</h3>
+              <p class="venue-card-text">
+                Espaço descontraído com piso em gramado verde, mesas de madeira dobráveis, tambores personalizados Sabor&Arte e um mural com grandes lendas do cinema e da música.
+              </p>
+            </div>
+            <div class="venue-card-detail-bar">
+              <span>Mural Sétima Arte</span>
+              <span>Mesas Dobráveis de Madeira</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Atributos Chave do Restaurante -->
+        <div class="ambient-attributes-row reveal-on-scroll">
+          <div class="ambient-attr-item">
+            <h4>Ambiente Acolhedor</h4>
+            <p>Cabines intimistas e cadeiras de madeira que acolhem conversas agradáveis em família.</p>
+          </div>
+          <div class="ambient-attr-item">
+            <h4>Espaço Climatizado</h4>
+            <p>Conforto térmico agradável para almoços e jantares em qualquer época do ano.</p>
+          </div>
+          <div class="ambient-attr-item">
+            <h4>Decoração Artística</h4>
+            <p>Pinturas nas paredes, painéis do cinema clássico e detalhes em madeira artesanal.</p>
+          </div>
+          <div class="ambient-attr-item">
+            <h4>Experiência Diferenciada</h4>
+            <p>Atendimento acolhedor desde as boas-vindas até o último brinde à mesa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="avaliacoes">
+      <div class="container">
+        <div class="reviews-header-block reveal-on-scroll">
+          <div class="reviews-score-hero">
+            <span class="score-number">5,0</span>
+            <div class="score-details-text">
+              <span class="score-stars">★★★★★</span>
+              <span class="score-total-label">21 avaliações no Google</span>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Sabor%26Arte+Gourmet+Itapecerica+da+Serra" target="_blank" rel="noopener noreferrer" class="btn-google-reviews">
+            Ver avaliações no Google
+          </a>
+        </div>
+
+        <div class="reviews-editorial-list">
+          <!-- Avaliação Real 1 -->
+          <div class="review-editorial-item reveal-on-scroll">
+            <span class="review-mark-sign">“</span>
+            <p class="review-quote-body">
+              "Experiência maravilhosa, lugar super aconchegante."
+            </p>
+            <span class="review-author-meta">Avaliação no Google Maps</span>
+          </div>
+
+          <!-- Avaliação Real 2 -->
+          <div class="review-editorial-item reveal-on-scroll" style="transition-delay: 0.15s;">
+            <span class="review-mark-sign">“</span>
+            <p class="review-quote-body">
+              "Excelente atendimento! Fomos muito bem recepcionados."
+            </p>
+            <span class="review-author-meta">Avaliação no Google Maps</span>
+          </div>
+
+          <!-- Avaliação Real 3 -->
+          <div class="review-editorial-item reveal-on-scroll" style="transition-delay: 0.3s;">
+            <span class="review-mark-sign">“</span>
+            <p class="review-quote-body">
+              "A comida é muito gostosa e o ambiente é muito acolhedor."
+            </p>
+            <span class="review-author-meta">Avaliação no Google Maps</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section" id="localizacao">
+      <div class="container location-grid">
+        <div class="location-info-block reveal-on-scroll">
+          <span class="eyebrow">Localização & Contato</span>
+          <h2 class="heading-editorial location-title">Sabor&Arte Gourmet</h2>
+          <p class="location-address-lead">
+            Venha desfrutar de um momento único no centro de Itapecerica da Serra.
+          </p>
+
+          <div class="info-data-list">
+            <div class="info-data-row">
+              <span class="info-data-label">Endereço</span>
+              <span class="info-data-val">Av. Quinze de Novembro - Centro, Itapecerica da Serra - SP, 06850-100</span>
+            </div>
+            <div class="info-data-row">
+              <span class="info-data-label">Telefone</span>
+              <span class="info-data-val">(11) 95707-6511</span>
+            </div>
+            <div class="info-data-row">
+              <span class="info-data-label">Faixa de Preço</span>
+              <span class="info-data-val">R$ 40 – R$ 60 por pessoa</span>
+            </div>
+            <div class="info-data-row">
+              <span class="info-data-label">Horários</span>
+              <!-- ESPAÇO EDITÁVEL PARA INSERIR OS HORÁRIOS CONFIRMADOS -->
+              <span class="info-data-val">Consulte horários atualizados de almoço e jantar via WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="services-tagline">
+            <span class="service-badge">Refeição no local</span>
+            <span class="service-badge">Para viagem</span>
+            <span class="service-badge">Entrega</span>
+          </div>
+
+          <div class="location-cta-actions">
+            <a href="https://wa.me/5511957076511" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-direct">
+              Conversar pelo WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Sabor%26Arte+Gourmet+Itapecerica+da+Serra" target="_blank" rel="noopener noreferrer" class="btn-maps-direct">
+              Como Chegar
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal-on-scroll">
+          <div class="map-frame-wrapper">
+            <iframe 
+              src="https://maps.google.com/maps?q=Sabor%20e%20Arte%20Gourmet%20Av.%20Quinze%20de%20Novembro%20Itapecerica%20da%20Serra&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de localização do Sabor&Arte Gourmet no Google Maps">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <h4 class="footer-brand-title">Sabor&Arte Gourmet</h4>
+          <p class="footer-brand-slogan">"Cada sabor, uma expressão de arte."</p>
+          <p class="footer-brand-summary">
+            Gastronomia acolhedora, ingredientes frescos e identidade artística no coração de Itapecerica da Serra.
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Navegação</h5>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#essencia">Nossa Essência</a></li>
+            <li><a href="#assinaturas">Assinaturas da Casa</a></li>
+            <li><a href="#cardapio">Cardápio Demonstrativo</a></li>
+            <li><a href="#ambiente">O Espaço & Arte</a></li>
+            <li><a href="#avaliacoes">Avaliações 5 Estrelas</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h5>Contato & Reservas</h5>
+          <div class="footer-contact-details">
+            <p><strong>Endereço:</strong><br>Av. Quinze de Novembro - Centro, Itapecerica da Serra - SP</p>
+            <p><strong>WhatsApp:</strong><br>(11) 95707-6511</p>
+            <p><strong>Média de Preço:</strong><br>R$ 40 – R$ 60 por pessoa</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; <span id="currentYear"></span> Sabor&Arte Gourmet. Todos os direitos reservados.</span>
+        <span>Projeto de Design Editorial Autoral.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /**
+     * =========================================================================
+     * BANCO DE DADOS DO CARDÁPIO (EDITÁVEL)
+     * =========================================================================
+     * ATENÇÃO: Pratos e preços demonstrativos solicitados pelo briefing.
+     * Para atualizar com o menu definitivo do restaurante, edite os objetos abaixo.
+     * Categorias válidas: 'entradas' | 'principais' | 'sobremesas' | 'bebidas'
+     */
+    const MENU_DATABASE = [
+      // ENTRADAS
+      {
+        category: 'entradas',
+        name: 'Bruschetta Artesanal',
+        price: 'R$ 24,90',
+        desc: 'Pão artesanal tostado, tomates frescos, manjericão e azeite especial.'
+      },
+      {
+        category: 'entradas',
+        name: 'Croquete da Casa',
+        price: 'R$ 29,90',
+        desc: 'Croquetes crocantes acompanhados de molho especial.'
+      },
+      {
+        category: 'entradas',
+        name: 'Salada Gourmet',
+        price: 'R$ 32,90',
+        desc: 'Mix de folhas, tomates, ingredientes frescos e molho da casa.'
+      },
+      {
+        category: 'entradas',
+        name: 'Dadinhos de Tapioca',
+        price: 'R$ 27,90',
+        desc: 'Porção crocante acompanhada de geleia agridoce.'
+      },
+
+      // PRATOS PRINCIPAIS
+      {
+        category: 'principais',
+        name: 'Penne à la Vodka',
+        price: 'R$ 49,90',
+        desc: 'Massa penne envolvida em molho cremoso e temperos especiais.'
+      },
+      {
+        category: 'principais',
+        name: 'Tilápia à Parmegiana',
+        price: 'R$ 59,90',
+        desc: 'Filé de tilápia empanado, molho de tomate e queijo gratinado.'
+      },
+      {
+        category: 'principais',
+        name: 'Filé ao Molho Especial',
+        price: 'R$ 64,90',
+        desc: 'Corte bovino acompanhado de molho artesanal e guarnição.'
+      },
+      {
+        category: 'principais',
+        name: 'Frango Gourmet',
+        price: 'R$ 45,90',
+        desc: 'Filé de frango com ervas selecionadas e acompanhamento.'
+      },
+      {
+        category: 'principais',
+        name: 'Risoto Cremoso',
+        price: 'R$ 54,90',
+        desc: 'Arroz arbóreo preparado lentamente com ingredientes selecionados.'
+      },
+      {
+        category: 'principais',
+        name: 'Prato Especial da Casa',
+        price: 'R$ 62,90',
+        desc: 'Sugestão gastronômica preparada com ingredientes da estação.'
+      },
+
+      // SOBREMESAS
+      {
+        category: 'sobremesas',
+        name: 'Brownie com Sorvete',
+        price: 'R$ 24,90',
+        desc: 'Brownie denso de cacau nobre servido morno com sorvete de baunilha.'
+      },
+      {
+        category: 'sobremesas',
+        name: 'Cheesecake Artesanal',
+        price: 'R$ 22,90',
+        desc: 'Base crocante com creme aveludado e coulis de frutas vermelhas.'
+      },
+      {
+        category: 'sobremesas',
+        name: 'Petit Gâteau',
+        price: 'R$ 27,90',
+        desc: 'Bolo com recheio cremoso quente acompanhado de sorvete.'
+      },
+      {
+        category: 'sobremesas',
+        name: 'Sobremesa Especial da Casa',
+        price: 'R$ 19,90',
+        desc: 'Receita doce artesanal sugerida pelo chef no dia.'
+      },
+
+      // BEBIDAS
+      {
+        category: 'bebidas',
+        name: 'Água Mineral',
+        price: 'R$ 6,00',
+        desc: 'Sem gás ou com gás.'
+      },
+      {
+        category: 'bebidas',
+        name: 'Refrigerante',
+        price: 'R$ 8,00',
+        desc: 'Lata 350ml variedades.'
+      },
+      {
+        category: 'bebidas',
+        name: 'Suco Natural',
+        price: 'R$ 12,00',
+        desc: 'Frutas frescas da estação preparadas na hora.'
+      },
+      {
+        category: 'bebidas',
+        name: 'Café Espresso',
+        price: 'R$ 7,00',
+        desc: 'Grãos selecionados com torra especial.'
+      },
+      {
+        category: 'bebidas',
+        name: 'Bebida Especial da Casa',
+        price: 'R$ 16,00',
+        desc: 'Coquetel autoral refrescante com frutas tropicais.'
+      }
+    ];
+
+    const menuPaper = document.getElementById('menuPaper');
+    const menuItemsList = document.getElementById('menuItemsList');
+    const tabButtons = document.querySelectorAll('.menu-tab-btn');
+
+    function renderCategory(cat) {
+      const items = MENU_DATABASE.filter(item => item.category === cat);
+
+      menuPaper.classList.add('fade-out');
+
+      setTimeout(() => {
+        let html = '';
+        items.forEach(dish => {
+          html += `
+            <div class="menu-item-row">
+              <div class="menu-item-header">
+                <span class="menu-item-name">${dish.name}</span>
+                <span class="menu-item-leader" aria-hidden="true"></span>
+                <span class="menu-item-price">${dish.price}</span>
+              </div>
+              <p class="menu-item-desc">${dish.desc}</p>
+            </div>
+          `;
+        });
+
+        menuItemsList.innerHTML = html;
+        menuPaper.classList.remove('fade-out');
+        menuPaper.classList.add('fade-in');
+      }, 150);
+    }
+
+    // Inicializa na categoria de pratos principais
+    renderCategory('principais');
+
+    // Event listeners para as abas
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderCategory(btn.getAttribute('data-category'));
+      });
+    });
+
+    const siteHeader = document.getElementById('siteHeader');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // IntersectionObserver para animações elegantes de revelação
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
